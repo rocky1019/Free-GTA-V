@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free gta v</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .download-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 3px solid green;
+            background-color: black;
+            box-shadow: 0 0 15px green;
+        }
+
+        .download-box h1 {
+            color: lime;
+            font-size: 2rem;
+        }
+
+        .download-box button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: lime;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-box button:hover {
+            background-color: darkgreen;
+        }
+
+        .alert-box {
+            text-align: center;
+            padding: 20px;
+            border: 3px solid red;
+            background-color: black;
+            box-shadow: 0 0 15px red;
+            animation: flicker 0.1s infinite;
+            display: none;
+        }
+
+        @keyframes flicker {
+            0% { box-shadow: 0 0 10px red; }
+            50% { box-shadow: 0 0 20px red; }
+            100% { box-shadow: 0 0 10px red; }
+        }
+
+        .alert-box h1 {
+            font-size: 2rem;
+            color: red;
+        }
+
+        .alert-box p {
+            font-size: 1rem;
+        }
+
+        .alert-box button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: red;
+            border: none;
+            cursor: not-allowed;
+            animation: blink 0.1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .glitch {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: red;
+            font-size: 2rem;
+            animation: glitch 0.2s infinite;
+            display: none;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(-50%, -50%) skewX(0deg); }
+            50% { transform: translate(-48%, -52%) skewX(-10deg); }
+            100% { transform: translate(-50%, -50%) skewX(0deg); }
+        }
+
+        .crash-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: none;
+            animation: crash 0.1s infinite;
+        }
+
+        @keyframes crash {
+            0% { background: rgb(0, 0, 0); }
+            25% { background: rgb(12, 14, 12); }
+            50% { background: rgb(255, 255, 255); }
+            75% { background: rgb(255, 255, 252); }
+            100% { background: #000; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="download-box" id="downloadBox">
+            <h1>GTA V Free Mobile Version</h1>
+            <h2 style="text-align: left;" > size - 18gb </h2> 
+            <h3 id="thisisit" > 
+              If you're looking to enjoy GTA V on your mobile device for free, you're in the right place! Download the game now and experience the action-packed world of GTA V anywhere you go.
+            </h3>
+            
+            <img src="images/gtav.jpg" alt="gta v"> 
+
+            <button onclick="startPrank()">Download</button>
+        </div>
+        <div class="alert-box" id="alertBox">
+            <h1>⚠️ Virus Detected! ⚠️</h1>
+            <p>Your device is infected! All data will be deleted in <span id="timer">10</span> seconds!</p>
+            <button>Fix Now</button>
+        </div>
+        <div class="glitch" id="glitch">CRITICAL ERROR</div>
+        <div class="crash-screen" id="crashScreen"></div>
+    </div>
+
+    <script>
+        let timer = 10;
+        const timerElement = document.getElementById('timer');
+        const alertBox = document.getElementById('alertBox');
+        const downloadBox = document.getElementById('downloadBox');
+        const glitch = document.getElementById('glitch');
+        const crashScreen = document.getElementById('crashScreen');
+
+        function startPrank() {
+            downloadBox.style.display = 'none';
+            alertBox.style.display = 'block';
+            glitch.style.display = 'block';
+
+            const countdown = setInterval(() => {
+                timer--;
+                timerElement.textContent = timer;
+                if (timer <= 0) {
+                    clearInterval(countdown);
+                    alertBox.style.display = 'none';
+                    glitch.style.display = 'none';
+                    crashScreen.style.display = 'block';
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
+>
+
